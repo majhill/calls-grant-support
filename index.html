@@ -7,51 +7,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --teal:   #0097A7;
-      --teal-dark: #00788A;
-      --amber:  #F5A623;
-      --amber-dark: #D4901F;
-      --cream:  #FAFAFA;
-      --white:  #FFFFFF;
-      --charcoal: #1E2A35;
-      --gray:   #6B7280;
+      --teal: #0097A7; --teal-dark: #00788A;
+      --amber: #F5A623; --amber-dark: #D4901F;
+      --cream: #FAFAFA; --white: #FFFFFF;
+      --charcoal: #1E2A35; --gray: #6B7280;
       --light-teal: #E0F5F7;
     }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--cream);
-      color: var(--charcoal);
-    }
-
-    /* NAV */
     nav {
       background: var(--white);
-      padding: 1.2rem 2rem;
+      padding: 0.75rem 2rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       border-bottom: 3px solid var(--teal);
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .nav-brand {
-      color: var(--charcoal);
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.02em;
-    }
-    .nav-brand span { color: var(--teal); }
-    .nav-link {
-      color: var(--teal);
-      font-size: 0.85rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .nav-link:hover { color: var(--teal-dark); }
+    .nav-logo { height: 70px; cursor: pointer; }
 
-    /* HERO */
     .hero {
       background: linear-gradient(135deg, var(--teal) 0%, #00BCD4 100%);
       padding: 5rem 2rem 4rem;
@@ -62,8 +36,7 @@
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -2px;
-      left: 0; right: 0;
+      bottom: -2px; left: 0; right: 0;
       height: 60px;
       background: var(--cream);
       clip-path: ellipse(55% 100% at 50% 100%);
@@ -72,264 +45,107 @@
       display: inline-block;
       background: rgba(255,255,255,0.2);
       color: var(--white);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.4rem 1rem;
-      border-radius: 2rem;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.4rem 1rem; border-radius: 2rem;
       margin-bottom: 1.5rem;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.2rem, 5vw, 3.6rem);
-      color: var(--white);
-      line-height: 1.15;
-      max-width: 720px;
-      margin: 0 auto 1.5rem;
+      color: var(--white); line-height: 1.15;
+      max-width: 720px; margin: 0 auto 1.5rem;
     }
-    .hero h1 em {
-      color: var(--amber);
-      font-style: normal;
-    }
+    .hero h1 em { color: var(--amber); font-style: normal; }
     .hero-sub {
-      color: rgba(255,255,255,0.88);
-      font-size: 1.05rem;
-      max-width: 520px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.7;
+      color: rgba(255,255,255,0.88); font-size: 1.05rem;
+      max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.7;
     }
-    .hero-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      position: relative;
-      z-index: 1;
-    }
-    .steps {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    .step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
+    .hero-actions { display: flex; flex-direction: column; align-items: center; gap: 1rem; position: relative; z-index: 1; }
+    .steps { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+    .step { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
     .step-number {
-      background: rgba(255,255,255,0.2);
-      color: var(--white);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      padding: 0.25rem 0.75rem;
-      border-radius: 2rem;
+      background: rgba(255,255,255,0.2); color: var(--white);
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+      padding: 0.25rem 0.75rem; border-radius: 2rem;
     }
-    .step-note {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.78rem;
-      text-align: center;
-      max-width: 180px;
-    }
-    .step-arrow {
-      color: rgba(255,255,255,0.4);
-      font-size: 1.5rem;
-      margin-top: 1.5rem;
-    }
+    .step-note { color: rgba(255,255,255,0.6); font-size: 0.78rem; text-align: center; max-width: 180px; }
+    .step-arrow { color: rgba(255,255,255,0.4); font-size: 1.5rem; margin-top: 1.5rem; }
+
     .btn-primary {
-      background: var(--amber);
-      color: var(--white);
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.9rem 2.2rem;
-      border-radius: 4px;
+      background: var(--amber); color: var(--white);
+      font-weight: 600; font-size: 0.95rem;
+      padding: 0.9rem 2.2rem; border-radius: 4px;
       text-decoration: none;
-      letter-spacing: 0.02em;
       transition: background 0.2s, transform 0.1s;
       box-shadow: 0 4px 14px rgba(245,166,35,0.4);
     }
     .btn-primary:hover { background: var(--amber-dark); transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      font-weight: 500;
-      font-size: 0.95rem;
-      padding: 0.9rem 2.2rem;
-      border-radius: 4px;
-      border: 2px solid rgba(255,255,255,0.6);
-      text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
+    .btn-disabled {
+      background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.5);
+      font-weight: 600; font-size: 0.95rem;
+      padding: 0.9rem 2.2rem; border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.3);
+      cursor: not-allowed; display: inline-block;
     }
-    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
 
-    /* TRUTH SECTION */
-    .truth {
-      background: var(--white);
-      padding: 4.5rem 2rem;
+    .modal-overlay {
+      display: none; position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); z-index: 1000;
+      align-items: center; justify-content: center;
     }
-    .truth-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      border-left: 5px solid var(--amber);
-      padding-left: 2rem;
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: var(--white); border-radius: 8px;
+      padding: 2.5rem; max-width: 440px; width: 90%;
+      text-align: center; border-top: 4px solid var(--amber);
     }
-    .truth-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 1rem;
+    .modal h3 { font-size: 1.2rem; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .modal p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
+    .modal-close {
+      background: var(--teal); color: var(--white);
+      border: none; padding: 0.6rem 1.5rem; border-radius: 4px;
+      cursor: pointer; font-size: 0.9rem; font-weight: 600;
     }
-    .truth p {
-      font-size: 1.1rem;
-      line-height: 1.85;
-      color: #374151;
-      margin-bottom: 1rem;
-    }
+
+    .truth { background: var(--white); padding: 4.5rem 2rem; }
+    .truth-inner { max-width: 760px; margin: 0 auto; border-left: 5px solid var(--amber); padding-left: 2rem; }
+    .truth-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .truth p { font-size: 1.05rem; line-height: 1.85; color: #374151; margin-bottom: 1rem; }
     .truth p:last-child { margin-bottom: 0; }
     .truth strong { color: var(--charcoal); }
 
-    /* WHAT YOU GET */
-    .offers {
-      background: var(--light-teal);
-      padding: 4.5rem 2rem;
-    }
-    .section-title {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
-      color: var(--charcoal);
-      margin-bottom: 0.5rem;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--gray);
-      font-size: 0.95rem;
-      margin-bottom: 3rem;
-    }
-    .offers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      max-width: 920px;
-      margin: 0 auto;
-    }
-    .offer-card {
-      background: var(--white);
-      border-radius: 8px;
-      padding: 1.75rem 1.5rem;
-      border-top: 4px solid var(--teal);
-      box-shadow: 0 2px 12px rgba(0,151,167,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .offer-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,151,167,0.14);
-    }
-    .offer-icon {
-      font-size: 1.8rem;
-      margin-bottom: 0.75rem;
-    }
-    .offer-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--charcoal);
-      margin-bottom: 0.5rem;
-    }
-    .offer-card p {
-      font-size: 0.88rem;
-      color: var(--gray);
-      line-height: 1.6;
-    }
+    .offers { background: var(--light-teal); padding: 4.5rem 2rem; }
+    .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--charcoal); margin-bottom: 0.5rem; }
+    .section-sub { text-align: center; color: var(--gray); font-size: 0.95rem; margin-bottom: 3rem; }
+    .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 920px; margin: 0 auto; }
+    .offer-card { background: var(--white); border-radius: 8px; padding: 1.75rem 1.5rem; border-top: 4px solid var(--teal); box-shadow: 0 2px 12px rgba(0,151,167,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+    .offer-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,151,167,0.14); }
+    .offer-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .offer-card h3 { font-size: 1rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.5rem; }
+    .offer-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
 
-    /* WHO IS THIS FOR */
-    .audience {
-      background: var(--white);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .audience-inner {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .audience h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: var(--charcoal);
-      margin-bottom: 1.5rem;
-    }
-    .audience-list {
-      list-style: none;
-      text-align: left;
-      display: inline-block;
-    }
-    .audience-list li {
-      font-size: 0.97rem;
-      color: #374151;
-      padding: 0.5rem 0;
-      padding-left: 1.75rem;
-      position: relative;
-      line-height: 1.6;
-    }
-    .audience-list li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--teal);
-      font-weight: 700;
-    }
+    .audience { background: var(--white); padding: 4rem 2rem; text-align: center; }
+    .audience-inner { max-width: 680px; margin: 0 auto; }
+    .audience h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--charcoal); margin-bottom: 1.5rem; }
+    .audience-list { list-style: none; text-align: left; display: inline-block; }
+    .audience-list li { font-size: 0.97rem; color: #374151; padding: 0.5rem 0; padding-left: 1.75rem; position: relative; line-height: 1.6; }
+    .audience-list li::before { content: '✓'; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
 
-    /* CTA SECTION */
-    .cta-section {
-      background: linear-gradient(135deg, var(--charcoal) 0%, #2D3F50 100%);
-      padding: 4.5rem 2rem;
-      text-align: center;
-    }
-    .cta-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-    .cta-section p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.97rem;
-      margin-bottom: 2rem;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.7;
-    }
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .cta-note {
-      margin-top: 1.25rem;
-      color: rgba(255,255,255,0.45);
-      font-size: 0.8rem;
-    }
+    .cta-section { background: linear-gradient(135deg, var(--charcoal) 0%, #2D3F50 100%); padding: 4.5rem 2rem; text-align: center; }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--white); margin-bottom: 0.75rem; }
+    .cta-section > p { color: rgba(255,255,255,0.7); font-size: 0.97rem; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .cta-buttons { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; align-items: flex-start; }
+    .cta-note { margin-top: 1.25rem; color: rgba(255,255,255,0.45); font-size: 0.8rem; }
 
-    /* FOOTER */
-    footer {
-      background: #111827;
-      padding: 2rem;
-      text-align: center;
-      color: #6B7280;
-      font-size: 0.82rem;
-      line-height: 1.8;
-    }
+    footer { background: #111827; padding: 2.5rem 2rem; text-align: center; color: #9CA3AF; font-size: 0.85rem; line-height: 2; }
     footer a { color: var(--teal); text-decoration: none; }
+    footer strong { color: var(--white); }
 
     @media (max-width: 600px) {
       .hero { padding: 3.5rem 1.25rem 3.5rem; }
+      .step-arrow { display: none; }
       .truth-inner { padding-left: 1.25rem; }
       .offers, .audience, .cta-section { padding: 3rem 1.25rem; }
     }
@@ -337,15 +153,24 @@
 </head>
 <body>
 
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <h3>Please Complete the Intake Form First</h3>
+      <p>To make the most of your consultation, please complete the brief intake form first. This helps us prepare meaningful, focused guidance for your organization before we meet.</p>
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('active')">Got it — Complete the Form</button>
+    </div>
+  </div>
+
   <nav>
-    <div class="nav-brand"><span>CALLS</span> Academy</div>
-    <a class="nav-link" href="https://callsacademy.org">← Main Site</a>
+    <a href="https://callsacademy.org">
+      <img src="CALLS_Logo.jpg" alt="CALLS Academy" class="nav-logo" />
+    </a>
   </nav>
 
   <section class="hero">
     <div class="hero-eyebrow">Free During Pilot Program</div>
     <h1>Is Your Nonprofit <em>Ready</em> for Grant Funding?</h1>
-    <p class="hero-sub">CALLS Academy offers free grant readiness consultations to help nonprofit leaders find aligned funding, understand their options, and take the right next step.</p>
+    <p class="hero-sub">CALLS Academy offers free grant readiness consultations to help nonprofit leaders find aligned funding, understand their options, and take confident next steps.</p>
     <div class="hero-actions">
       <div class="steps">
         <div class="step">
@@ -356,8 +181,8 @@
         <div class="step-arrow">→</div>
         <div class="step">
           <div class="step-number">Step 2</div>
-          <a class="btn-outline" href="https://meetings-na2.hubspot.com/gary-hill" target="_blank">Book Your Consultation</a>
-          <div class="step-note">Link also sent after form</div>
+          <span class="btn-disabled" onclick="document.getElementById('modal').classList.add('active')" style="cursor:pointer;">Book Your Consultation</span>
+          <div class="step-note">Unlocks after form submission</div>
         </div>
       </div>
     </div>
@@ -365,10 +190,10 @@
 
   <section class="truth">
     <div class="truth-inner">
-      <div class="truth-label">Why We Built This</div>
-      <p>Nonprofit leaders are too busy running their mission to read the landscape. Grant opportunities are publicly available — federal, foundation, corporate. Cycle dates are posted — nobody is hiding them. Eligibility requirements are written down — they just require patience to decode.</p>
-      <p><strong>The money is sitting there waiting to be claimed.</strong> And most small nonprofits never get it — not because they don't deserve it — but because nobody took the time to read.</p>
-      <p>That's why CALLS built this.</p>
+      <div class="truth-label">Why Funding Readiness Matters</div>
+      <p>Many nonprofit leaders are focused on serving their communities, managing programs, and meeting immediate needs. Finding and pursuing funding opportunities often becomes another responsibility competing for limited time and resources.</p>
+      <p>At the same time, thousands of grant opportunities exist through foundations, corporations, and government agencies. Understanding where to start, which opportunities align with your mission, and how to prepare can be challenging.</p>
+      <p><strong>We created this service to help nonprofit leaders cut through the complexity,</strong> better understand their funding readiness, and identify practical next steps toward pursuing grant opportunities with confidence.</p>
     </div>
   </section>
 
@@ -379,22 +204,17 @@
       <div class="offer-card">
         <div class="offer-icon">🎯</div>
         <h3>Readiness Assessment</h3>
-        <p>We review where your organization stands and identify what's needed before applying.</p>
+        <p>Evaluate your organization's current level of preparedness for pursuing grant funding. We'll identify strengths, potential gaps, and key areas that may impact funding success.</p>
       </div>
       <div class="offer-card">
         <div class="offer-icon">🔍</div>
         <h3>Grant Matching</h3>
-        <p>We identify grant opportunities aligned to your mission, location, and budget.</p>
-      </div>
-      <div class="offer-card">
-        <div class="offer-icon">📅</div>
-        <h3>Cycle Guidance</h3>
-        <p>We tell you what's open now, what's coming, and which to pursue first.</p>
+        <p>We'll review your mission, programs, and goals to identify grant opportunities with a high degree of alignment — helping you focus on the strongest matches for your organization.</p>
       </div>
       <div class="offer-card">
         <div class="offer-icon">🗺️</div>
         <h3>Clear Next Steps</h3>
-        <p>You leave with a clear path forward — whether applying now or preparing for next cycle.</p>
+        <p>Leave with practical recommendations and a roadmap for moving forward — whether you're preparing for your first grant application or strengthening your funding strategy.</p>
       </div>
     </div>
   </section>
@@ -403,11 +223,11 @@
     <div class="audience-inner">
       <h2>Who This Is For</h2>
       <ul class="audience-list">
-        <li>Registered nonprofits ready to pursue grant funding</li>
+        <li>Registered nonprofits seeking funding opportunities</li>
         <li>Organizations with a clear mission but limited grant experience</li>
-        <li>Leaders too busy running programs to navigate the grant landscape</li>
-        <li>Nonprofits that have applied before but need better alignment and strategy</li>
-        <li>Organizations preparing for their first grant cycle</li>
+        <li>Leaders focused on delivering programs who lack the time to navigate the grant landscape</li>
+        <li>Nonprofits that have applied for grants before but need stronger alignment and strategy</li>
+        <li>Organizations preparing to pursue their first grant opportunity</li>
       </ul>
     </div>
   </section>
@@ -420,18 +240,20 @@
         <div class="step-number" style="background:rgba(255,255,255,0.15)">Step 1</div>
         <a class="btn-primary" href="https://42q9hq.share-na2.hsforms.com/2T8ZLLgIRTi2EHAMg9hgPqg" target="_blank">Complete Intake Form</a>
       </div>
-      <div class="step-arrow">→</div>
+      <div class="step-arrow" style="color:rgba(255,255,255,0.3); margin-top:1.5rem;">→</div>
       <div class="step">
         <div class="step-number" style="background:rgba(255,255,255,0.15)">Step 2</div>
-        <a class="btn-outline" href="https://meetings-na2.hubspot.com/gary-hill" target="_blank">Book Your Consultation</a>
+        <span class="btn-disabled" onclick="document.getElementById('modal').classList.add('active')" style="cursor:pointer;">Book Your Consultation</span>
       </div>
     </div>
     <p class="cta-note">Free during our pilot program · No obligation · Honest guidance</p>
   </section>
 
   <footer>
-    <p>A service of <a href="https://callsacademy.org">CALLS Academy</a> — Community Academy for Leadership &amp; Life Skills</p>
-    <p style="margin-top:0.5rem"><a href="https://callsacademy.org">callsacademy.org</a></p>
+    <p><strong>A service of C.A.L.L.S.</strong></p>
+    <p>Community Academy for Leadership &amp; Life Skills</p>
+    <p><a href="https://callsacademy.org">www.callsacademy.org</a></p>
+    <p>Questions? <a href="mailto:info@callsacademy.org">info@callsacademy.org</a></p>
   </footer>
 
 </body>
