@@ -101,11 +101,44 @@
     }
     .hero-actions {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
       position: relative;
       z-index: 1;
+    }
+    .steps {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .step-number {
+      background: rgba(255,255,255,0.2);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 2rem;
+    }
+    .step-note {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.78rem;
+      text-align: center;
+      max-width: 180px;
+    }
+    .step-arrow {
+      color: rgba(255,255,255,0.4);
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
     }
     .btn-primary {
       background: var(--amber);
@@ -314,8 +347,19 @@
     <h1>Is Your Nonprofit <em>Ready</em> for Grant Funding?</h1>
     <p class="hero-sub">CALLS Academy offers free grant readiness consultations to help nonprofit leaders find aligned funding, understand their options, and take the right next step.</p>
     <div class="hero-actions">
-      <a class="btn-primary" href="https://42q9hq.share-na2.hsforms.com/2T8ZLLgIRTi2EHAMg9hgPqg" target="_blank">Complete Intake Form</a>
-      <a class="btn-outline" href="https://meetings-na2.hubspot.com/gary-hill" target="_blank">Book a Consultation</a>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">Step 1</div>
+          <a class="btn-primary" href="https://42q9hq.share-na2.hsforms.com/2T8ZLLgIRTi2EHAMg9hgPqg" target="_blank">Complete Intake Form</a>
+          <div class="step-note">Takes about 3 minutes</div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-number">Step 2</div>
+          <a class="btn-outline" href="https://meetings-na2.hubspot.com/gary-hill" target="_blank">Book Your Consultation</a>
+          <div class="step-note">Link also sent after form</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -372,8 +416,15 @@
     <h2>Ready to Get Started?</h2>
     <p>Complete the short intake form so we can prepare meaningful, focused guidance before your consultation.</p>
     <div class="cta-buttons">
-      <a class="btn-primary" href="https://42q9hq.share-na2.hsforms.com/2T8ZLLgIRTi2EHAMg9hgPqg" target="_blank">Complete Intake Form</a>
-      <a class="btn-outline" href="https://meetings-na2.hubspot.com/gary-hill" target="_blank">Book a Consultation</a>
+      <div class="step">
+        <div class="step-number" style="background:rgba(255,255,255,0.15)">Step 1</div>
+        <a class="btn-primary" href="https://42q9hq.share-na2.hsforms.com/2T8ZLLgIRTi2EHAMg9hgPqg" target="_blank">Complete Intake Form</a>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number" style="background:rgba(255,255,255,0.15)">Step 2</div>
+        <a class="btn-outline" href="https://meetings-na2.hubspot.com/gary-hill" target="_blank">Book Your Consultation</a>
+      </div>
     </div>
     <p class="cta-note">Free during our pilot program · No obligation · Honest guidance</p>
   </section>
